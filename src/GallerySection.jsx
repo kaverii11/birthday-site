@@ -3,60 +3,52 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const memories = [
   {
-    id: 1,
-    title: "Memory 1",
-    caption: "[Caption 1] 💕",
-    longDesc: "[Long Description for Memory 1 - Write your beautiful story here!]",
+    id: 5,
+    title: "Birthday shopping",
+    caption: "💕",
+    longDesc: "I was so excited to shop for you, kinda rare but a very sweet moment and you look so hot in this polo, you could literally pull anything off!",
     img: "/images/IMG_2223.jpg",
     rot: "-3deg",
   },
   {
-    id: 2,
-    title: "Memory 2",
-    caption: "[Caption 2] ✨",
-    longDesc: "[Long Description for Memory 2 - Write your beautiful story here!]",
+    id: 1,
+    title: "Concert day ",
+    caption: "How it started ✨",
+    longDesc: "Thank you dire straits for making me meet you, my perfect man I love you endlessly 💕",
     img: "/images/IMG_3753.jpg",
     rot: "2deg",
   },
   {
-    id: 3,
-    title: "Memory 3",
-    caption: "[Caption 3] ☕",
-    longDesc: "[Long Description for Memory 3 - Write your beautiful story here!]",
+    id: 6,
+    title: "Happiest 25th Birthday ",
+    caption: "Happy birthday babe",
+    longDesc: "Your smile is the best reason for my happiness I love you so much and can't wait to make more memories with you",
     img: "/images/IMG_4951.jpg",
     rot: "-2deg",
   },
   {
-    id: 4,
-    title: "Memory 4",
-    caption: "[Caption 4] 🚗",
-    longDesc: "[Long Description for Memory 4 - Write your beautiful story here!]",
+    id: 2,
+    title: "Me + You = perfection",
+    caption: "My happy place",
+    longDesc: "I love watching movies with you and falling asleep in you arms, any place with you is my happy place 💕 ",
     img: "/images/IMG_6895.jpg",
     rot: "3deg",
   },
   {
-    id: 5,
-    title: "Memory 5",
-    caption: "[Caption 5] 🍿",
-    longDesc: "[Long Description for Memory 5 - Write your beautiful story here!]",
+    id: 3,
+    title: "Date nights",
+    caption: "Dinner and drinks with you",
+    longDesc: "Good food, good drinks and just us, you’re the best date i could ever ask for 💕",
     img: "/images/IMG_8419.jpg",
     rot: "-1deg",
   },
   {
-    id: 6,
-    title: "Memory 6",
-    caption: "[Caption 6] 💍",
-    longDesc: "[Long Description for Memory 6 - Write your beautiful story here!]",
+    id: 4,
+    title: "My beautiful boy",
+    caption: "I LOVE YOU ♾️",
+    longDesc: "I love you more than words can express, you mean the world to me and I'm so lucky to have you in my life 💕",
     img: "/images/IMG_9512.JPG",
     rot: "1deg",
-  },
-  {
-    id: 7,
-    title: "Memory 7",
-    caption: "[Caption 7] 🎂",
-    longDesc: "[Long Description for Memory 7 - Write your beautiful story here!]",
-    img: "/images/IMG_9891.JPG",
-    rot: "-2deg",
   },
 ];
 
@@ -98,9 +90,9 @@ export default function GallerySection() {
             initial={{ opacity: 0, y: 40, rotate: photo.rot }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
-            whileHover={{ 
-              scale: 1.05, 
-              rotate: '0deg', 
+            whileHover={{
+              scale: 1.05,
+              rotate: '0deg',
               zIndex: 10,
               boxShadow: "0 25px 50px -12px rgba(244, 63, 94, 0.25)"
             }}
@@ -165,7 +157,7 @@ export default function GallerySection() {
                     {selectedPhoto.title}
                   </h3>
                 </div>
-                
+
                 <div className="mt-4 h-px bg-slate-100 w-24" />
 
                 <p className="font-cursive text-2xl md:text-3xl text-slate-700 leading-relaxed mt-6 italic">
