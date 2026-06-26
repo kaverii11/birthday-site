@@ -8,7 +8,7 @@ export default function CassettePlayer({ autoPlay = true }) {
   const audioRef = useRef(null);
 
   // You can replace this URL with your own local /music.mp3 or any audio link!
-  const audioUrl = "/Harvest.mp3";
+  const audioUrl = "/song.mp3";
 
   useEffect(() => {
     if (audioRef.current) {
@@ -118,7 +118,7 @@ export default function CassettePlayer({ autoPlay = true }) {
             {isPlaying ? '🎵 Playing' : '🔇 Paused'}
           </p>
           <p className="text-white text-xs font-semibold truncate select-none leading-none mt-1">
-            Harvest - Opeth 🍂
+            That song - Elvis 🍂
           </p>
 
           {/* Buttons */}
