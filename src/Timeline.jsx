@@ -3,67 +3,67 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const milestones = [
   {
-    date:  'Jan 14',
+    date: 'Jan 14',
     emoji: '✨',
     title: 'The Day We Met',
-    desc:  'Thanks to a stupid concert and a very lucky restaurant, i met the most amazing person alive and not a day has gone by where i have not fallen more in love with you',
-    secret: 'I still remember exactly how i felt. But the concert, lucky chan, chin lungs and walking around cause we dont want to be separated and then being together in the cab ride back home was just something else. I knew from that day on that you are the one',
+    desc: 'Thanks to a stupid concert and a very lucky restaurant, i met the most amazing person alive and not a day has gone by where i have not fallen more in love with you',
+    secret: 'I still remember exactly how i felt. The concert, lucky chan, chin lungs and walking around cause we dont want to be separated and then being together in the cab ride back home was just something else. I knew from that day on that you are the one',
     color: 'from-rose-400 to-pink-500',
-    bg:    'bg-rose-50',
-    border:'border-rose-200',
-    dot:   'bg-rose-400',
+    bg: 'bg-rose-50',
+    border: 'border-rose-200',
+    dot: 'bg-rose-400',
   },
   {
-    date:  'Jan 17',
+    date: 'Jan 17',
     emoji: '💋',
     title: 'First Kiss',
-    desc:  'Three days later. Butterflies, racing heart, my team losing the derby match and us just wanting to be together.',
-    secret: 'Best loss my team ever had, because it meant I got to be with you.',
+    desc: 'Three days later. Butterflies, racing heart, my team losing the derby match, Best loss my team ever had because it meant I got to be with you.',
+    secret: 'I wanted to kiss you at the concert but i was too scared, cause it was so new but glad you gave in while playing games haha 😉',
     color: 'from-pink-400 to-fuchsia-500',
-    bg:    'bg-pink-50',
-    border:'border-pink-200',
-    dot:   'bg-pink-400',
+    bg: 'bg-pink-50',
+    border: 'border-pink-200',
+    dot: 'bg-pink-400',
   },
   {
-    date:  'Jan 31',
+    date: 'Jan 31',
     emoji: '❤️',
     title: 'First "I Love You"',
-    desc:  'The three words that changed everything. You said it first and my heart? Gone. Social day has to be our best first date date.',
-    secret: 'When you said it first, i was so surprised but then it just slipped out because that feeling i had for you was so true and so real.',
+    desc: 'The three words that changed everything. You said it first and my heart? Gone. Social day has to be our best first date date.',
+    secret: 'When you said it first, i was so surprised but then it just slipped out of me aswell because that feeling i had for you was so true and so real.',
     color: 'from-red-400 to-rose-500',
-    bg:    'bg-red-50',
-    border:'border-red-200',
-    dot:   'bg-red-400',
+    bg: 'bg-red-50',
+    border: 'border-red-200',
+    dot: 'bg-red-400',
   },
   {
-    date:  'Feb 8',
+    date: 'Feb 8',
     emoji: '💍',
     title: 'Propose Day',
-    desc:  'My first valentines week, cutest rose day and best day to be proposed to by you, the love of my life.',
+    desc: 'My first valentines week, cutest rose day and best day to be proposed to by you, the love of my life.',
     secret: 'Seeing your smile when i gave u rose on rose day, and the following valentines week was the absolute highlight of my year.',
     color: 'from-fuchsia-400 to-purple-500',
-    bg:    'bg-fuchsia-50',
-    border:'border-fuchsia-200',
-    dot:   'bg-fuchsia-400',
+    bg: 'bg-fuchsia-50',
+    border: 'border-fuchsia-200',
+    dot: 'bg-fuchsia-400',
   },
   {
-    date:  'June 27',
+    date: 'June 27',
     emoji: '🎂',
     title: 'Happy 25th Birthday!',
-    desc:  'Level 25 — you\'ve officially unlocked the unc stage but don\'t worry lucky for you I\'m very much into you. So glad I get to be here for it. 🥳',
+    desc: 'Level 25 — you\'ve officially unlocked the unc stage but don\'t worry lucky for you I\'m very much into you. So glad I get to be here for it. 🥳',
     secret: 'I can\'t wait to celebrate 100 more birthdays with you. You are my forever.',
     color: 'from-amber-400 to-orange-500',
-    bg:    'bg-amber-50',
-    border:'border-amber-200',
-    dot:   'bg-amber-400',
+    bg: 'bg-amber-50',
+    border: 'border-amber-200',
+    dot: 'bg-amber-400',
     special: true,
   },
 ];
 
 // card variants
 const cardVariants = {
-  hidden:  { opacity: 0, y: 60, scale: 0.95 },
-  visible: { opacity: 1, y: 0,  scale: 1 },
+  hidden: { opacity: 0, y: 60, scale: 0.95 },
+  visible: { opacity: 1, y: 0, scale: 1 },
 };
 
 function TimelineCard({ m, i }) {
@@ -106,16 +106,16 @@ function TimelineCard({ m, i }) {
               {m.title}
             </h3>
             <p className="text-slate-600 text-sm leading-relaxed mb-1">{m.desc}</p>
-            
+
             {/* Secret Reveal Section */}
             <div className="mt-3 pt-3 border-t border-slate-200/50">
-              <button 
+              <button
                 onClick={() => setIsRevealed(!isRevealed)}
                 className="text-xs font-semibold text-rose-500 hover:text-rose-700 flex items-center gap-1 transition-colors focus:outline-none"
               >
                 {isRevealed ? '🙈 Hide Secret' : '✉️ Read Secret Memory'}
               </button>
-              
+
               <AnimatePresence>
                 {isRevealed && (
                   <motion.div
