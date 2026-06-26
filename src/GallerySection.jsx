@@ -112,7 +112,7 @@ export default function GallerySection() {
 
             {/* Handwritten Caption */}
             <div className="mt-5 text-center">
-              <p className="font-cursive text-3xl text-rose-600 leading-tight tracking-wide">
+              <p className="font-mono text-lg font-medium text-rose-600 leading-tight tracking-wide">
                 {photo.caption}
               </p>
             </div>
@@ -160,7 +160,7 @@ export default function GallerySection() {
 
                 <div className="mt-4 h-px bg-slate-100 w-24" />
 
-                <p className="font-cursive text-2xl md:text-3xl text-slate-700 leading-relaxed mt-6 italic">
+                <p className="font-mono text-lg text-slate-700 leading-relaxed mt-6">
                   "{selectedPhoto.longDesc}"
                 </p>
 
