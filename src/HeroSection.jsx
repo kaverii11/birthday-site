@@ -10,6 +10,7 @@ export default function HeroSection() {
     } else if (label === 'Love Notes') {
       document.getElementById('jar-section')?.scrollIntoView({ behavior: 'smooth' });
     } else if (label === 'Love Level') {
+      document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
       const rect = e.currentTarget.getBoundingClientRect();
       const heroRect = document.getElementById('hero').getBoundingClientRect();
       const x = rect.left + rect.width / 2 - heroRect.left;
@@ -129,7 +130,7 @@ export default function HeroSection() {
           {[
             { icon: '💕', label: 'Milestones', value: '5', hoverMsg: 'Scroll to Story' },
             { icon: '💌', label: 'Love Notes', value: '25', hoverMsg: 'Scroll to Jar' },
-            { icon: '❤️', label: 'Love Level', value: '∞', hoverMsg: 'Tap for Magic!' },
+            { icon: '❤️', label: 'Love Level', value: '∞', hoverMsg: 'Tap for Memories!' },
           ].map(({ icon, label, value, hoverMsg }) => (
             <div
               key={label}
