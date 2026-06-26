@@ -3,14 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const memories = [
   {
-    id: 5,
-    title: "Birthday shopping",
-    caption: "💕",
-    longDesc: "I was so excited to shop for you, kinda rare but a very sweet moment and you look so hot in this polo, you could literally pull anything off!",
-    img: "/images/IMG_2223.jpg",
-    rot: "-3deg",
-  },
-  {
     id: 1,
     title: "Concert day ",
     caption: "How it started ✨",
@@ -19,23 +11,7 @@ const memories = [
     rot: "2deg",
   },
   {
-    id: 6,
-    title: "Happiest 25th Birthday ",
-    caption: "Happy birthday babe",
-    longDesc: "Your smile is the best reason for my happiness I love you so much and can't wait to make more memories with you",
-    img: "/images/IMG_4951.jpg",
-    rot: "-2deg",
-  },
-  {
     id: 2,
-    title: "Me + You = perfection",
-    caption: "My happy place",
-    longDesc: "I love watching movies with you and falling asleep in you arms, any place with you is my happy place 💕 ",
-    img: "/images/IMG_6895.jpg",
-    rot: "3deg",
-  },
-  {
-    id: 3,
     title: "Date nights",
     caption: "Dinner and drinks with you",
     longDesc: "Good food, good drinks and just us, you’re the best date i could ever ask for 💕",
@@ -43,12 +19,36 @@ const memories = [
     rot: "-1deg",
   },
   {
+    id: 3,
+    title: "Me + You = perfection",
+    caption: "My happy place",
+    longDesc: "I love watching movies with you and falling asleep in you arms, any place with you is my happy place 💕 ",
+    img: "/images/IMG_6895.jpg",
+    rot: "3deg",
+  },
+  {
     id: 4,
+    title: "Birthday shopping",
+    caption: "💕",
+    longDesc: "I was so excited to shop for you, kinda rare but a very sweet moment and you look so hot in this polo, you could literally pull anything off!",
+    img: "/images/IMG_2223.jpg",
+    rot: "-3deg",
+  },
+  {
+    id: 5,
     title: "My beautiful boy",
     caption: "I LOVE YOU ♾️",
     longDesc: "I love you more than words can express, you mean the world to me and I'm so lucky to have you in my life 💕",
     img: "/images/IMG_9512.JPG",
     rot: "1deg",
+  },
+  {
+    id: 6,
+    title: "Happiest 25th Birthday ",
+    caption: "Happy birthday babe",
+    longDesc: "Your smile is the best reason for my happiness I love you so much and can't wait to make more memories with you",
+    img: "/images/IMG_4951.jpg",
+    rot: "-2deg",
   },
 ];
 
