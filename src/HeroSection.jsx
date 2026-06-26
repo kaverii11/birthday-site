@@ -1,6 +1,35 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function HeroSection() {
+  const [hearts, setHearts] = useState([]);
+
+  const handleStatClick = (label, e) => {
+    if (label === 'Milestones') {
+      document.getElementById('timeline')?.scrollIntoView({ behavior: 'smooth' });
+    } else if (label === 'Love Notes') {
+      document.getElementById('jar-section')?.scrollIntoView({ behavior: 'smooth' });
+    } else if (label === 'Love Level') {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const heroRect = document.getElementById('hero').getBoundingClientRect();
+      const x = rect.left + rect.width / 2 - heroRect.left;
+      const y = rect.top + rect.height / 2 - heroRect.top;
+      
+      const newHearts = Array.from({ length: 12 }).map((_, i) => ({
+        id: Date.now() + i,
+        x: x + (Math.random() - 0.5) * 150,
+        y: y + (Math.random() - 0.5) * 150,
+        scale: Math.random() * 0.5 + 0.8,
+        rot: Math.random() * 60 - 30,
+      }));
+      
+      setHearts(prev => [...prev, ...newHearts]);
+      setTimeout(() => {
+        setHearts(prev => prev.filter(h => !newHearts.find(nh => nh.id === h.id)));
+      }, 2000);
+    }
+  };
+
   return (
     <section
       id="hero"
@@ -29,6 +58,22 @@ export default function HeroSection() {
           {em}
         </span>
       ))}
+
+      {/* Click Heart Explosion */}
+      <AnimatePresence>
+        {hearts.map(heart => (
+          <motion.div
+            key={heart.id}
+            initial={{ opacity: 1, scale: 0, x: heart.x, y: heart.y, rotate: heart.rot }}
+            animate={{ opacity: 0, scale: heart.scale, y: heart.y - 100 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute z-50 text-3xl pointer-events-none"
+          >
+            💖
+          </motion.div>
+        ))}
+      </AnimatePresence>
 
       {/* Main content */}
       <motion.div
@@ -82,17 +127,23 @@ export default function HeroSection() {
           className="flex flex-wrap justify-center gap-4 mb-10"
         >
           {[
-            { icon: '💕', label: 'Milestones', value: '5' },
-            { icon: '💌', label: 'Love Notes', value: '25' },
-            { icon: '❤️', label: 'Love Level', value: '∞' },
-          ].map(({ icon, label, value }) => (
+            { icon: '💕', label: 'Milestones', value: '5', hoverMsg: 'Scroll to Story' },
+            { icon: '💌', label: 'Love Notes', value: '25', hoverMsg: 'Scroll to Jar' },
+            { icon: '❤️', label: 'Love Level', value: '∞', hoverMsg: 'Tap for Magic!' },
+          ].map(({ icon, label, value, hoverMsg }) => (
             <div
               key={label}
-              className="bg-white/70 backdrop-blur border border-rose-100 rounded-2xl px-5 py-3 shadow-sm text-center"
+              onClick={(e) => handleStatClick(label, e)}
+              className="group relative cursor-pointer bg-white/70 backdrop-blur border border-rose-100 rounded-2xl px-5 py-3 shadow-sm text-center transition-all duration-300 hover:scale-105 hover:shadow-md hover:border-rose-300"
             >
-              <span className="text-2xl">{icon}</span>
-              <p className="font-extrabold text-2xl text-slate-800 leading-tight">{value}</p>
+              <span className="text-2xl transition-transform group-hover:scale-125 inline-block">{icon}</span>
+              <p className="font-extrabold text-2xl text-slate-800 leading-tight mt-1">{value}</p>
               <p className="text-slate-500 text-xs tracking-wide">{label}</p>
+              
+              {/* Tooltip */}
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-rose-500 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap pointer-events-none">
+                {hoverMsg}
+              </div>
             </div>
           ))}
         </motion.div>
