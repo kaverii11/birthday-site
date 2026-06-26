@@ -111,16 +111,23 @@ const BOOT_LINES = [
   '> VERIFIED ✓  AGE = 25  [ABOVE THRESHOLD]',
   '> wink wink... you are 25 now hehe.',
   ' ',
-  '      .-.   .-.',
-  '     (   \\ /   )',
-  '      \\   V   /',
-  '       \\ P+K /',
-  '        \\   /',
-  '         \'V\'',
+  '    .-""-.   .-""-.',
+  '   /      \\ /      \\',
+  '  |   P    v    K   |',
+  '   \\               /',
+  '    \\             /',
+  '     \\           /',
+  '      \\         /',
+  '       \\       /',
+  '        \\     /',
+  '         \\   /',
+  '          `v\'',
   ' ',
   '> ALL SYSTEMS NOMINAL.',
   '> PRESS START TO CONTINUE_',
 ];
+
+
 
 export default function LoadingScreen({ onStart }) {
   const { displayed, cursor } = useTypewriter(BOOT_LINES, 35, 500);
@@ -177,7 +184,7 @@ export default function LoadingScreen({ onStart }) {
         </div>
 
         {/* body */}
-        <div className="p-4 md:p-6 font-mono text-[11px] md:text-xs leading-6 min-h-[400px]">
+        <div className="p-4 md:p-6 font-mono text-[11px] md:text-xs leading-6 min-h-[520px]">
           {BOOT_LINES.map((_, i) => (
             <p key={i} className={`${i < displayed.length ? 'opacity-100' : 'opacity-0'} transition-opacity`}>
               {displayed[i] ?? ''}
