@@ -3,8 +3,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import LoadingScreen from './LoadingScreen';
 import HeroSection   from './HeroSection';
 import Timeline      from './Timeline';
+import GallerySection from './GallerySection';
 import JarSection    from './JarSection';
 import Footer        from './Footer';
+import CassettePlayer from './CassettePlayer';
 
 export default function App() {
   const [gameStarted, setGameStarted] = useState(false);
@@ -23,8 +25,10 @@ export default function App() {
           >
             <HeroSection />
             <Timeline />
+            <GallerySection />
             <JarSection />
             <Footer />
+            <CassettePlayer autoPlay={true} />
           </motion.main>
         )}
       </AnimatePresence>

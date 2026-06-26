@@ -149,3 +149,8 @@ body {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #0f172a; }
 ::-webkit-scrollbar-thumb { background: #fda4af; border-radius: 3px; }
+
+/* ── Handwritten Font ── */
+.font-cursive {
+  font-family: 'Caveat', cursive;
+}

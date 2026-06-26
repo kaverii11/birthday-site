@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 // ── Typewriter hook ───────────────────────────────────────────────────────────
 function useTypewriter(lines, speed = 45, lineDelay = 700) {
   const [displayed, setDisplayed] = useState([]);
-  const [cursor, setCursor]       = useState(true);
+  const [cursor, setCursor] = useState(true);
 
   useEffect(() => {
-    let lineIdx  = 0;
-    let charIdx  = 0;
+    let lineIdx = 0;
+    let charIdx = 0;
     let finished = false;
     let timeoutId;
 
@@ -51,11 +51,11 @@ function useTypewriter(lines, speed = 45, lineDelay = 700) {
 function Stars({ count = 120 }) {
   const stars = useRef(
     Array.from({ length: count }, () => ({
-      x:     Math.random() * 100,
-      y:     Math.random() * 100,
-      size:  Math.random() * 2.5 + 0.5,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 2.5 + 0.5,
       delay: Math.random() * 4,
-      dur:   Math.random() * 2 + 2,
+      dur: Math.random() * 2 + 2,
     }))
   ).current;
 
@@ -66,12 +66,12 @@ function Stars({ count = 120 }) {
           key={i}
           className="star"
           style={{
-            left:             `${s.x}%`,
-            top:              `${s.y}%`,
-            width:            s.size,
-            height:           s.size,
-            animationDelay:   `${s.delay}s`,
-            animationDuration:`${s.dur}s`,
+            left: `${s.x}%`,
+            top: `${s.y}%`,
+            width: s.size,
+            height: s.size,
+            animationDelay: `${s.delay}s`,
+            animationDuration: `${s.dur}s`,
           }}
         />
       ))}
@@ -109,15 +109,23 @@ const BOOT_LINES = [
   '> AGE REQUIREMENT: 24+',
   '> CHECKING USER AGE...',
   '> VERIFIED ✓  AGE = 25  [ABOVE THRESHOLD]',
-  '> wink wink... you are.',
+  '> wink wink... you are 25 now hehe.',
+  ' ',
+  '      .-.   .-.',
+  '     (   \\ /   )',
+  '      \\   V   /',
+  '       \\ P+K /',
+  '        \\   /',
+  '         \'V\'',
+  ' ',
   '> ALL SYSTEMS NOMINAL.',
   '> PRESS START TO CONTINUE_',
 ];
 
 export default function LoadingScreen({ onStart }) {
   const { displayed, cursor } = useTypewriter(BOOT_LINES, 35, 500);
-  const [progress, setProgress]   = useState(0);
-  const [ready, setReady]         = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [ready, setReady] = useState(false);
 
   // drive a fake progress bar in sync with the typing
   useEffect(() => {
@@ -169,7 +177,7 @@ export default function LoadingScreen({ onStart }) {
         </div>
 
         {/* body */}
-        <div className="p-4 md:p-6 font-mono text-[11px] md:text-xs leading-6 min-h-[220px]">
+        <div className="p-4 md:p-6 font-mono text-[11px] md:text-xs leading-6 min-h-[400px]">
           {BOOT_LINES.map((_, i) => (
             <p key={i} className={`${i < displayed.length ? 'opacity-100' : 'opacity-0'} transition-opacity`}>
               {displayed[i] ?? ''}
@@ -206,9 +214,9 @@ export default function LoadingScreen({ onStart }) {
           key={i}
           className="absolute select-none text-xl pointer-events-none animate-float opacity-30"
           style={{
-            left:              `${10 + i * 20}%`,
-            bottom:            `${15 + (i % 3) * 12}%`,
-            animationDelay:    `${i * 0.7}s`,
+            left: `${10 + i * 20}%`,
+            bottom: `${15 + (i % 3) * 12}%`,
+            animationDelay: `${i * 0.7}s`,
             animationDuration: `${3 + i * 0.4}s`,
           }}
         >
